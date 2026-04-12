@@ -26,4 +26,4 @@ The scraper captures the following fields for each product:
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/yourusername/prom-scraper.git](https://github.com/yourusername/prom-scraper.git)
-   cd prom-scraper
+   cd main.py
