@@ -1,51 +1,48 @@
-Prom.ua GraphQL Scraper
+# 📦 Prom.ua GraphQL Scraper | API Edition
 
-Скрипт на Python для збору товарів з каталогу Prom.ua через GraphQL API з подальшою вигрузкою в Excel або CSV.
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![GraphQL](https://img.shields.io/badge/API-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+![Pandas](https://img.shields.io/badge/Data-Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Speed](https://img.shields.io/badge/Speed-Ultra_Fast-success?style=for-the-badge)
 
-🚀 Можливості
-Робота через GraphQL API (швидше та стабільніше за HTML-парсинг)
-Автоматичний збір великої кількості товарів (пагінація через offset)
-Захист від блокувань (рандомні затримки + browser headers)
-Видалення дублікатів (по ID товару)
-Збереження результату у Excel / CSV
-🛠 Технології
-Python 3
-requests
-pandas
-python-dotenv
-openpyxl
-📊 Дані, що збираються
+**Високопродуктивний скрипт для збору товарів через внутрішній GraphQL API Prom.ua.** Працює напряму з даними, що робить його в десятки разів швидшим та стабільнішим за звичайний HTML-парсинг.
 
-Для кожного товару:
+---
 
-ID
-Назва
-Ціна
-Валюта
-Продавець
-📁 Результат
-Excel / CSV файл з товарами
-Приклад: зібрано 100+ товарів за один запуск
-⚙️ Як запустити
-git clone https://github.com/yourusername/prom-scraper.git
-cd prom-scraper
-pip install -r requirements.txt
-python main.py --count 100
-🔐 Налаштування
+### 🚀 Ключові переваги
 
-Створи файл .env у корені проекту:
+* **⚡️ GraphQL Power**: Отримує "чисті" JSON-дані без зайвого HTML-сміття. Це мінімізує трафік та час обробки.
+* **🔄 Smart Pagination**: Автоматичний перебір товарів через систему `offset`, що дозволяє збирати тисячі позицій за один сеанс.
+* **🛡 Stealth Mode**: Використання браузерних заголовків та рандомних затримок для обходу анти-фрод систем.
+* **💎 Clean Data**: Вбудована перевірка на дублікати за унікальним `ID` товару.
+* **📊 Business Ready**: Експорт результатів у формати **Excel (.xlsx)** або **CSV**, повністю готових до імпорту в CRM або маркетплейси.
 
-PROM_COOKIES=your_cookies_here
-PROM_CLIENT_ID=your_client_id_here
-📌 Особливості
-Підтримує збір великих обсягів даних через пагінацію
-Може бути адаптований під інші категорії
-Легко масштабується під більші обсяги
-🎯 Для чого підходить
-збір товарів для аналізу
-моніторинг цін
-наповнення інтернет-магазинів
-автоматизація збору даних
-💡 Примітка
+---
 
-Скрипт використовує внутрішній API, тому для стабільної роботи потрібні актуальні cookies.
+### 📊 Дані, що збираються
+
+| Поле | Опис |
+| :--- | :--- |
+| **Product ID** | Унікальний ідентифікатор товару |
+| **Назва** | Повне найменування лоту |
+| **Ціна** | Актуальна вартість (numeric) |
+| **Валюта** | Тип валюти (UAH, USD тощо) |
+| **Продавець** | Назва компанії-магазину на Prom |
+
+---
+
+### 🛠 Технологічний стек
+
+* **Core:** `Python 3.10+`
+* **Networking:** `requests` (API interaction)
+* **Data Handling:** `Pandas`
+* **Security:** `python-dotenv` (для захисту ключів та куків)
+
+---
+
+### 📦 Швидкий старт
+
+1. **Клонуй репозиторій:**
+   ```bash
+   git clone [https://github.com/yourusername/prom-scraper.git](https://github.com/yourusername/prom-scraper.git)
+   cd prom-scraper
