@@ -1,29 +1,47 @@
-# Prom.ua GraphQL Scraper
+Prom.ua GraphQL Scraper
 
-This is a robust Python scraper designed to interact with the **Prom.ua GraphQL API**. It automates the process of extracting product information from catalog categories and exports the results into a structured Excel format.
+Скрипт на Python для збору товарів з каталогу Prom.ua через GraphQL API з подальшою вигрузкою в Excel.
 
-## 🚀 Key Features
-* **GraphQL Integration:** Directly communicates with the site's internal API for high-speed data retrieval.
-* **Automated Pagination:** Uses `offset` logic to bypass the single-request limit (50 items) and collect hundreds of products.
-* **Anti-Bot Protection:** Implements randomized request delays and browser-like headers to minimize detection.
-* **Data Cleaning:** Automatic duplicate removal based on unique Product IDs.
-* **Secure Configuration:** Uses `.env` files to keep sensitive session data (cookies) private.
+🚀 Можливості
+Робота через GraphQL API (швидше та стабільніше за HTML-парсинг)
+Автоматичний збір великої кількості товарів (пагінація через offset)
+Захист від блокувань (затримки + headers як у браузера)
+Видалення дублікатів (по ID товару)
+Збереження даних у Excel
+🛠 Технології
+Python 3
+requests
+pandas
+python-dotenv
+openpyxl
+📊 Які дані збираються
 
-## 🛠 Tech Stack
-* **Language:** Python 3.x
-* **Libraries:** `requests`, `pandas`, `python-dotenv`, `openpyxl`
+Для кожного товару:
 
-## 📋 Data Extracted
-The scraper captures the following fields for each product:
-* `id`: Unique product identifier.
-* `name`: Full product title as shown in the catalog.
-* `price`: Current listing price.
-* `currency`: Localized currency symbol (₴).
-* `vendor`: Name of the company/store selling the item.
+ID
+Назва
+Ціна
+Валюта
+Продавець
+📁 Результат
+Excel файл з товарами
+Приклад: зібрано 100+ товарів з категорії
+⚙️ Як запустити
+git clone https://github.com/yourusername/prom-scraper.git
+cd prom-scraper
+pip install -r requirements.txt
+python main.py
+🔐 Налаштування
 
-## ⚙️ Installation & Usage
+Для роботи використовується .env файл:
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/yourusername/prom-scraper.git](https://github.com/yourusername/prom-scraper.git)
-   cd main.py
+cookies / сесія (для доступу до API)
+💡 Примітка
+
+Може бути адаптовано під будь-які категорії та обсяги даних.
+
+🎯 Для чого підходить
+збір товарів для аналізу
+моніторинг цін
+наповнення інтернет-магазинів
+автоматизація роботи з даними
